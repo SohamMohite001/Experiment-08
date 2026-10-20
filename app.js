@@ -8,6 +8,10 @@ app.use(express.json());
 const SECRET_KEY = process.env.mysecretkey;
 const PORT = process.env.PORT || 5000;
 
+app.get('/',(req,res)=>{
+    res.send("Welcome to default route.");
+})
+
 // Login and generate token
 app.post("/login", (req, res) => {
     const { username, password } = req.body;
